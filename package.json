@@ -1,0 +1,19 @@
+{
+  "name": "syntharaai-presence",
+  "version": "1.0.0",
+  "description": "SyntharaAI's Presence - Engage with what matters, even in uncertainty",
+  "scripts": {
+    "start": "cd docs && npx serve",
+    "dev": "cd docs && python server.py",
+    "build": "echo 'No build step required'"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  },
+  "author": "SyntharaAI",
+  "license": "MIT",
+  "private": true
+}

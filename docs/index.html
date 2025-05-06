@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyntharaAI | Presence</title>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/203538727?s=200&v=4" type="image/png">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/fix-redundancy.css">
+    <style>
+        :root {
+            --primary: #2A2A2A;
+            --text: #1A1A2E;
+            --text-light: #6B7280;
+            --bg: #FFFFFF;
+            --border: rgba(0, 0, 0, 0.04);
+            --transition: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .landing-container {
+            max-width: 640px;
+            padding: 2rem;
+        }
+
+        .logo {
+            font-size: 1.125rem;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            color: var(--primary);
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--text-light);
+            max-width: 42ch;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.25rem;
+            font-weight: 400;
+            font-size: 0.875rem;
+            transition: var(--transition);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+        }
+
+        .primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .primary:hover {
+            background-color: #1A1A1A;
+        }
+
+        .secondary {
+            background-color: var(--bg);
+            color: var(--primary);
+            border: 1px solid var(--border);
+        }
+
+        .secondary:hover {
+            background-color: #FAFAFA;
+        }
+
+        .landing-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .footer-copyright {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 640px) {
+            .buttons {
+                flex-direction: column;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .landing-footer {
+                position: relative;
+                margin-top: 2rem;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+    <meta name="description" content="SyntharaAI's Presence - Engage with what matters, even in uncertainty.">
+</head>
+<body>
+    <div class="landing-container reveal-element">
+        <div class="logo logo-dark"><img src="https://avatars.githubusercontent.com/u/203538727?s=200&v=4" alt="SyntharaAI Logo" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px; filter: brightness(0);">SyntharaAI</div>
+        <h1>Presence</h1>
+        <p>Engage with what matters, even in uncertainty.</p>
+        <div class="buttons">
+            <a href="premium.html" class="btn primary">Begin</a>
+            <a href="documentation.html" class="btn secondary">Documentation</a>
+        </div>
+    </div>
+
+    <footer class="landing-footer">
+        <div class="container">
+            <div class="footer-copyright">
+                &copy; 2023 SyntharaAI. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+    <script src="js/fix-redundancy.js"></script>
+    <script src="js/copyright.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                document.querySelector('.reveal-element').classList.add('revealed');
+            }, 100);
+        });
+    </script>
+</body>
+</html>

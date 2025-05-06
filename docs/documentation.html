@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyntharaAI | Documentation</title>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/203538727?s=200&v=4" type="image/png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/fix-redundancy.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+    <meta name="description" content="SyntharaAI's Presence - Documentation for engaging with what matters, even in uncertainty.">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo logo-white"><img src="https://avatars.githubusercontent.com/u/203538727?s=200&v=4" alt="SyntharaAI Logo" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px; filter: brightness(0) invert(1);">SyntharaAI</div>
+                <ul class="nav-links">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="#installation">Setup</a></li>
+                    <li><a href="#usage">Usage</a></li>
+                    <li><a href="#api">API</a></li>
+                </ul>
+            </nav>
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Presence</h1>
+                    <p class="subtitle">Engage with what matters, even in uncertainty</p>
+                    <div class="cta-buttons">
+                        <a href="#installation" class="btn primary">Begin the Journey</a>
+                        <a href="https://github.com/syntharaai/rag-gemini-agent" class="btn secondary">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="overview" class="container section">
+            <h2>Overview</h2>
+            <div class="grid-2">
+                <div>
+                    <p>Life invites participation, not perfection. Our system helps you engage with what matters, even in uncertainty.</p>
+                    <p>Rather than eliminating complexity, we help you move through it with purpose, connecting with your values even without perfect clarity.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature">
+                        <h3>Context</h3>
+                        <p>Honors complexity without oversimplification.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Presence</h3>
+                        <p>Engages with uncertainty rather than avoiding it.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Values</h3>
+                        <p>Moves toward what matters, even without perfect clarity.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Integration</h3>
+                        <p>Meets you where you are, with what you have.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture" class="container section">
+            <h2>Architecture</h2>
+            <div class="architecture-diagram">
+                <img src="img/architecture.svg" alt="RAG Gemini Agent Architecture" class="diagram">
+            </div>
+            <div class="component-list">
+                <div class="component">
+                    <h3>Context Engine</h3>
+                    <p>Recognizes complexity without oversimplification.</p>
+                </div>
+                <div class="component">
+                    <h3>Wisdom Core</h3>
+                    <p>Engages with uncertainty rather than avoiding it.</p>
+                </div>
+                <div class="component">
+                    <h3>Values Framework</h3>
+                    <p>Aligns with what matters most to you.</p>
+                </div>
+                <div class="component">
+                    <h3>Presence Layer</h3>
+                    <p>Stays present with complexity rather than eliminating it.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="installation" class="container section">
+            <h2>Setup</h2>
+            <div class="code-container">
+                <pre><code>git clone https://github.com/syntharaai/rag-gemini-agent.git
+cd rag-gemini-agent
+
+python -m venv venv
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+cp .env.example .env
+# Add API key to .env</code></pre>
+            </div>
+        </section>
+
+        <section id="usage" class="container section">
+            <h2>Usage</h2>
+            <div class="tabs">
+                <div class="tab-header">
+                    <button class="tab-btn active" data-tab="demo">Interactive Demo</button>
+                    <button class="tab-btn" data-tab="api-server">API Server</button>
+                    <button class="tab-btn" data-tab="python">Python Integration</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="demo-tab">
+                        <div class="code-container">
+                            <pre><code>python demo.py</code></pre>
+                        </div>
+                        <p>Start an interactive session to ask questions to the RAG Gemini Agent.</p>
+                        <div class="terminal">
+                            <div class="terminal-header">
+                                <div class="terminal-button"></div>
+                                <div class="terminal-button"></div>
+                                <div class="terminal-button"></div>
+                            </div>
+                            <div class="terminal-content">
+                                <p>Initializing Presence...</p>
+                                <p>Embracing context...</p>
+                                <p>Wisdom Demo</p>
+                                <p>Type 'exit' to quit</p>
+                                <p class="prompt">Your question: How do I handle uncertainty?</p>
+                                <p>Reflecting...</p>
+                                <p class="response">Uncertainty isn't something to eliminate—it's something to engage with. Consider what matters to you and take a small step in that direction. The path becomes clearer as you move forward with presence.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="api-server-tab">
+                        <div class="code-container">
+                            <pre><code>python -m uvicorn api:app --reload</code></pre>
+                        </div>
+                        <p>API available at <code>localhost:8000</code> with documentation at <code>localhost:8000/docs</code>.</p>
+                        <h4>API Endpoints</h4>
+                        <ul class="endpoint-list">
+                            <li><code>POST /documents</code> - Add documents</li>
+                            <li><code>POST /query</code> - Query the agent</li>
+                            <li><code>DELETE /history</code> - Clear history</li>
+                            <li><code>DELETE /documents</code> - Clear documents</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="python-tab">
+                        <div class="code-container">
+                            <pre><code>from rag_gemini_agent.agent import RAGGeminiAgent
+
+# Begin
+agent = RAGGeminiAgent()
+
+# Context
+agent.add_documents(
+    ["Knowledge", "Wisdom"],
+    metadatas=[{"source": "Experience"}, {"source": "Learning"}]
+)
+
+# Values
+response = agent.query("What matters here?")
+print(response)</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="api" class="container section">
+            <h2>API Reference</h2>
+            <div class="api-reference">
+                <div class="api-method">
+                    <h3>Presence</h3>
+                    <p>A framework for engaging with what matters, even in uncertainty.</p>
+                    <h4>Methods</h4>
+                    <div class="method">
+                        <h5>add_documents(texts, metadatas=None)</h5>
+                        <p>Embrace your context.</p>
+                        <ul class="params">
+                            <li><code>texts</code>: Knowledge and wisdom</li>
+                            <li><code>metadatas</code>: Source information</li>
+                        </ul>
+                        <p>Returns: Context connection</p>
+                    </div>
+                    <div class="method">
+                        <h5>query(query, use_wisdom=True, use_history=True)</h5>
+                        <p>Move toward what matters.</p>
+                        <ul class="params">
+                            <li><code>query</code>: What matters to you</li>
+                            <li><code>use_wisdom</code>: Engage with uncertainty</li>
+                            <li><code>use_history</code>: Honor your journey</li>
+                        </ul>
+                        <p>Returns: Wisdom, not just answers</p>
+                    </div>
+                    <div class="method">
+                        <h5>clear_history()</h5>
+                        <p>Begin fresh, without judgment.</p>
+                    </div>
+                    <div class="method">
+                        <h5>clear_documents()</h5>
+                        <p>Create space for new wisdom.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo logo-dark"><img src="https://avatars.githubusercontent.com/u/203538727?s=200&v=4" alt="SyntharaAI Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; filter: brightness(0);">SyntharaAI</div>
+                <div class="footer-copyright">
+                    &copy; 2023 SyntharaAI. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/fix-redundancy.js"></script>
+    <script src="js/copyright.js"></script>
+</body>
+</html>

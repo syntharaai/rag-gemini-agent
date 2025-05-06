@@ -1,0 +1,46 @@
+/*
+ * Fix for redundant navigation elements
+ * This CSS file addresses the issue of redundant navigation appearing in the bottom left corner
+ */
+
+/* Hide any unintended navigation lists at the bottom of the page */
+body > ul,
+body > ol,
+footer + ul,
+footer + ol,
+footer ~ ul,
+footer ~ ol,
+body > li,
+footer ~ li,
+body > *:last-child + ul,
+body > *:last-child + li {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+/* Target the specific pattern seen in the screenshot */
+body > li:first-of-type:nth-last-of-type(1) {
+  display: none !important;
+}
+
+/* Ensure only intended navigation is visible */
+.nav-links,
+.mobile-nav-links,
+.premium-mobile-nav-links,
+.footer-links {
+  display: flex;
+}
+
+/* Hide any bullet points that might be appearing */
+body > ul li,
+footer ~ ul li,
+body > li {
+  list-style: none !important;
+  display: none !important;
+}

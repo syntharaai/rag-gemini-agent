@@ -1,0 +1,212 @@
+/*
+ * SyntharaAI Premium Mobile Styles
+ * Clean, focused mobile interface with no visual noise
+ */
+
+/* Premium mobile menu toggle */
+.premium-mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.premium-mobile-menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: var(--transition);
+}
+
+.premium-mobile-menu-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.premium-mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.premium-mobile-menu-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Premium mobile menu */
+.premium-mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--premium-primary);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.premium-mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.premium-mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--premium-spacing-md);
+}
+
+.premium-mobile-nav-links a {
+  color: white;
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: var(--premium-transition);
+}
+
+.premium-mobile-nav-links a:hover {
+  opacity: 0.8;
+}
+
+/* Mobile responsive adjustments for premium */
+@media (max-width: 992px) {
+  .premium-mobile-menu-toggle {
+    display: flex;
+  }
+
+  .premium-nav .nav-links {
+    display: none;
+  }
+
+  .premium-hero {
+    padding-top: var(--premium-spacing-md);
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: var(--premium-spacing-sm);
+    align-items: flex-start;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 1.875rem;
+  }
+
+  .section-description {
+    font-size: 0.9375rem;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: var(--premium-spacing-sm);
+  }
+
+  .tech-components {
+    margin-top: var(--premium-spacing-sm);
+  }
+
+  .step {
+    grid-template-columns: 60px 1fr;
+    gap: var(--premium-spacing-sm);
+  }
+
+  .step-number {
+    font-size: 2rem;
+  }
+
+  .step-title {
+    font-size: 1.25rem;
+  }
+
+  .code-snippet {
+    font-size: 0.75rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--premium-spacing-sm);
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--premium-spacing-sm);
+  }
+
+  .premium-header {
+    padding: var(--premium-spacing-sm) 0 var(--premium-spacing-md);
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.75rem;
+  }
+
+  .hero-description {
+    font-size: 0.9375rem;
+  }
+
+  .premium-section {
+    padding: var(--premium-spacing-lg) 0;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .capability-card {
+    padding: var(--premium-spacing-sm);
+  }
+
+  .capability-title {
+    font-size: 1rem;
+  }
+
+  .capability-description {
+    font-size: 0.875rem;
+  }
+
+  .step {
+    grid-template-columns: 50px 1fr;
+  }
+
+  .step-number {
+    font-size: 1.75rem;
+  }
+
+  .step-title {
+    font-size: 1.125rem;
+  }
+
+  .step-description {
+    font-size: 0.875rem;
+  }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert SVG to PNG</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        h1 {
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+        p {
+            margin-bottom: 1.5rem;
+        }
+        .banner-container {
+            max-width: 100%;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        .banner-container svg {
+            max-width: 100%;
+            height: auto;
+        }
+        button {
+            background-color: #2A2A2A;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #1A1A1A;
+        }
+        canvas {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Convert SVG to PNG</h1>
+    <p>This page helps you convert the SVG banner to a PNG image. Click the button below to generate and download the PNG version.</p>
+    
+    <div class="banner-container">
+        <!-- SVG will be loaded here -->
+    </div>
+    
+    <button id="convert">Convert to PNG and Download</button>
+    
+    <canvas id="canvas" width="1280" height="640"></canvas>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load the SVG
+            fetch('banner.svg')
+                .then(response => response.text())
+                .then(svgData => {
+                    document.querySelector('.banner-container').innerHTML = svgData;
+                });
+            
+            // Convert and download
+            document.getElementById('convert').addEventListener('click', function() {
+                const svg = document.querySelector('svg');
+                const canvas = document.getElementById('canvas');
+                const ctx = canvas.getContext('2d');
+                
+                // Create an image from the SVG
+                const img = new Image();
+                const svgBlob = new Blob([new XMLSerializer().serializeToString(svg)], {type: 'image/svg+xml'});
+                const url = URL.createObjectURL(svgBlob);
+                
+                img.onload = function() {
+                    // Draw the image on the canvas
+                    ctx.drawImage(img, 0, 0);
+                    
+                    // Convert canvas to PNG and download
+                    const pngUrl = canvas.toDataURL('image/png');
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = pngUrl;
+                    downloadLink.download = 'banner.png';
+                    document.body.appendChild(downloadLink);
+                    downloadLink.click();
+                    document.body.removeChild(downloadLink);
+                    
+                    // Clean up
+                    URL.revokeObjectURL(url);
+                };
+                
+                img.src = url;
+            });
+        });
+    </script>
+</body>
+</html>
